@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
+import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -17,6 +18,7 @@ public class CreateAccountScreen extends JFrame{
 	private JTextField firstNameTextField;
 	private JTextField lastNameTextField;
 	private JTextField emailTextField;
+	private JTextField passwordTextField;
 	private JPasswordField passwordField;
 
 	public CreateAccountScreen() {
@@ -58,7 +60,7 @@ public class CreateAccountScreen extends JFrame{
 		emailTextField = new JTextField(30);
 		emailTextField.setBounds(700, 320, 300, 30);
 		
-		JLabel passwordLabel = new JLabel("senha");
+		JLabel passwordLabel = new JLabel("Password");
 		passwordLabel.setBounds(700, 400, 100, 20);
 		
 		passwordField = new JPasswordField(5);
@@ -78,7 +80,13 @@ public class CreateAccountScreen extends JFrame{
 			}
 		});
 		
+		passwordTextField = new JTextField(30);
+		passwordTextField.setBounds(700, 420, 300, 30);
+		passwordTextField.setVisible(false);
+		passwordTextField.setEnabled(false);
 		
+		JCheckBox showPassword = new JCheckBox("Show password");
+		showPassword.setBounds(700, 450, 300, 30);
 		
 		//termina aqui
 		
@@ -92,6 +100,8 @@ public class CreateAccountScreen extends JFrame{
 		root.add(emailTextField);
 		root.add(passwordLabel);
 		root.add(passwordField);
+		root.add(passwordTextField);
+		root.add(showPassword);
 		
 		
 		setContentPane(root);
